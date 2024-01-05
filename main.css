@@ -1,0 +1,71 @@
+body {
+  overflow: hidden;
+}
+
+.gpt_message td  {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+    background-color: #00cc96;
+    border-radius: 15px;
+    max-width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    font-size: medium;
+}
+
+.user_message td  {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+    background-color: #ff6049;
+    border-radius: 15px;
+    max-width: 80%;
+    float: right;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    font-size: medium;
+  }
+
+  :root {
+    --element-padding: 1.5rem;
+  }
+
+  #root > .MuiBox-root {
+    min-height: 100%;
+  }
+  main {
+    flex: 0 0 100%;
+  }
+
+  /**** PASSED PROMPT LIST ****/
+
+  .past_prompts_list .MuiPaper-root {
+    background-color: var(--color-background);
+  }
+
+  .past_prompts_list li + li {
+    border-top: 1px solid var(--color-paper);
+  }
+
+  .past_prompts_list .MuiTreeItem-content {
+    font-style: italic;
+    padding: var(--spacing-half);
+    user-select: text !important;
+    cursor: pointer;
+  }
+  .past_prompts_list .MuiTreeItem-iconContainer {
+    display: none;
+  }
+
+  .sidebar {
+    height: calc(100vh - (4 * var(--root-margin, 0)));
+  }
+
+  .message_input {
+    margin: 0;
+  }
