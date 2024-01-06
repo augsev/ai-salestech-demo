@@ -23,7 +23,8 @@
 
 <|发送|button|on_action=action_send_message|active={vo_current_message_active}|class_name=plain|>
 
-<|{None}|file_download|label=下载聊天记录|on_action=action_download_history|active={vo_current_message_active}|>
+<|{None}|file_download|label=下载对话|on_action=action_download_history|active={vo_current_message_active}|>
+<|重新练习|button|on_action=action_open_confirm_dialog|active={vo_current_message_active}|>
 |>
 |>
 |>
@@ -51,6 +52,5 @@
 |>
 
 <|保存|button|on_action=action_update|class_name=plain|>
-<|重新练习|button|on_action=action_open_confirm_dialog|>
 |>
 |>
