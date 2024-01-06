@@ -19,7 +19,7 @@
 <|{vo_conversation}|table|style=style_conv|show_all|width=100%|selected={vo_selected_row}|rebuild|>
 <|part|class_name=card mt1|
 <|9 1|layout|
-<|{vo_current_message}|input|active={vo_current_message_active}|label=输入内容|multiline=True|lines_shown=2|on_action=action_send_message|on_change=message_changed|class_name=fullwidth message_input|>
+<|{vo_current_message}|input|active={vo_current_message_active}|label=输入内容|multiline=True|lines_shown=2|on_action=action_send_message|class_name=fullwidth message_input|>
 
 <|{vo_icon_history}|button|hover_text=复制聊天记录|on_action=action_copy_conversation|>
 |>

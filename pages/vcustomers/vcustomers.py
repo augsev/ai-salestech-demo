@@ -88,6 +88,7 @@ def get_cached_assistant(assistant_id: str) -> Assistant:
 
 
 # for vcustomer selector
+last_bvc = None
 vo_bvc = BoVCustomer()
 vo_bvcs = load()
 
@@ -126,11 +127,17 @@ vo_instructions = ''
 
 
 def action_select(state, var_name, value):
-    state.vo_bvc = value
-    state.vo_detail_show = True
+    if state.last_bvc is not None:
+        old_bvc: BoVCustomer = state.last_bvc
+        assistant_id = old_bvc.config.assistant_id
+        if assistant_id != '':
+            chat_ctx = get_cached_chat_context(assistant_id)
+            chat_ctx.current_message = '' if state.vo_current_message is None else state.vo_current_message
+            pass
+        pass
 
-    bvc: BoVCustomer = state.vo_bvc
-    assistant_id = bvc.config.assistant_id
+    new_bvc: BoVCustomer = value
+    assistant_id = new_bvc.config.assistant_id
 
     if assistant_id == '' or assistant_id is None:
         state.vo_instructions = ''
@@ -143,6 +150,10 @@ def action_select(state, var_name, value):
         get_cached_thread(assistant_id)
         state.vo_current_message_active = True
         pass
+
+    state.last_bvc = state.vo_bvc
+    state.vo_bvc = new_bvc
+    state.vo_detail_show = True
 
     # initial environment for chat
     switch_chat_context(state)
@@ -208,17 +219,6 @@ def action_renew_chat(state, id, payload):
         state.vo_confirm_show = False
         state.vo_detail_show = detail_show
         pass
-    pass
-
-
-def message_changed(state):
-    bvc: BoVCustomer = state.vo_bvc
-    assistant_id = bvc.config.assistant_id
-    if assistant_id == '':
-        return
-
-    chat_ctx = get_cached_chat_context(assistant_id)
-    chat_ctx.current_message = '' if state.vo_current_message is None else state.vo_current_message
     pass
 
 
