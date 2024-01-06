@@ -18,10 +18,12 @@
 <|part|render=True|class_name=align-item-bottom table|
 <|{vo_conversation}|table|style=style_conv|show_all|width=100%|selected={vo_selected_row}|rebuild|>
 <|part|class_name=card mt1|
-<|9 1|layout|
-<|{vo_current_message}|input|active={vo_current_message_active}|label=输入内容|multiline=True|lines_shown=2|on_action=action_send_message|class_name=fullwidth message_input|>
+<|9 1 1|layout|
+<|{vo_current_message}|input|active={vo_current_message_active}|label=输入内容|multiline=True|lines_shown=2|class_name=fullwidth message_input|>
 
-<|{vo_icon_history}|button|hover_text=复制聊天记录|on_action=action_copy_conversation|>
+<|发送|button|on_action=action_send_message|active={vo_current_message_active}|class_name=plain|>
+
+<|{None}|file_download|label=下载聊天记录|on_action=action_download_history|active={vo_current_message_active}|>
 |>
 |>
 |>

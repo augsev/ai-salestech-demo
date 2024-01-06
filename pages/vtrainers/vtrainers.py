@@ -1,8 +1,7 @@
 import time
 
-import pyperclip
 from openai.types.beta import Assistant, Thread
-from taipy.gui import Markdown, notify, Icon
+from taipy.gui import Markdown, notify, download
 
 from biz.bo import ChatContext, BoVTrainer
 from biz.vtrainer import list_all, add, update
@@ -167,7 +166,6 @@ vo_current_message_active = True
 vo_conversation = {"Conversation": []}
 vo_current_message = ''
 vo_selected_row = [0]
-vo_icon_history = Icon('images/icons/history.svg')
 
 
 def switch_chat_context(state):
@@ -296,14 +294,13 @@ def action_send_message(state):
     pass
 
 
-def action_copy_conversation(state):
+def action_download_history(state):
     bvt: BoVTrainer = state.vo_bvt
     assistant_id = bvt.config.assistant_id
     chat_ctx = get_cached_chat_context(assistant_id)
 
     history = "\n\n".join(chat_ctx.conversation["Conversation"])
-    pyperclip.copy(history)
-    notify(state, "success", "聊天记录已复制！")
+    download(state, content=bytes(history, "UTF-8"), name="%s.txt" % bvt.tname)
     pass
 
 
