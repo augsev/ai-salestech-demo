@@ -1,27 +1,27 @@
-<|{vo_create_show}|dialog|title=–¬Ω®AI≈‡—µ ¶|width=30%|labels=»°œ˚;–¬Ω®|on_action=action_create
+<|{vo_create_show}|dialog|title=Êñ∞Âª∫AIÂüπËÆ≠Â∏à|width=30%|labels=ÂèñÊ∂à;Êñ∞Âª∫|on_action=action_create
 
-<|{vo_tname}|input|label=√˚≥∆|class_name=fullwidth|>
+<|{vo_tname}|input|label=ÂêçÁß∞|class_name=fullwidth|>
 
-<|{vo_notes}|input|label=√Ë ˆ|class_name=fullwidth|>
+<|{vo_notes}|input|label=ÊèèËø∞|class_name=fullwidth|>
 |>
 
-<|{vo_confirm_show}|dialog|title=»∑»œ÷ÿ–¬¡∑œ∞|width=30%|labels=»°œ˚;»∑»œ|on_action=action_renew_chat
-#### **ƒ˙»∑»œ«Â≥˝œ÷”–¡ƒÃÏº«¬º£¨÷ÿ–¬ø™ º¡∑œ∞¬£ø**{: .h6}
+<|{vo_confirm_show}|dialog|title=Á°ÆËÆ§ÈáçÊñ∞ÁªÉ‰π†|width=30%|labels=ÂèñÊ∂à;Á°ÆËÆ§|on_action=action_renew_chat
+#### **ÊÇ®Á°ÆËÆ§Ê∏ÖÈô§Áé∞ÊúâËÅäÂ§©ËÆ∞ÂΩïÔºåÈáçÊñ∞ÂºÄÂßãÁªÉ‰π†ÂêóÔºü**{: .h6}
 |>
 
 <|2 9|layout|
 <sidebar|sidebar|
 <|{vo_bvt}|selector|lov={vo_bvts}|type=BoVTrainer|adapter={lambda v: (str(v.id), v.tname)}|on_change=action_select|>
-<|–¬Ω® +|button|on_action=action_open_create_dialog|class_name=fullwidth plain|>
+<|Êñ∞Âª∫ +|button|on_action=action_open_create_dialog|class_name=fullwidth plain|>
 |sidebar>
 
 <|part|render=True|class_name=align-item-bottom table|
 <|{vo_conversation}|table|style=style_conv|show_all|width=100%|selected={vo_selected_row}|rebuild|>
 <|part|class_name=card mt1|
 <|9 1|layout|
-<|{vo_current_message}|input|active={vo_current_message_active}|label= ‰»Îƒ⁄»›|multiline=True|lines_shown=2|on_action=action_send_message|on_change=message_changed|class_name=fullwidth message_input|>
+<|{vo_current_message}|input|active={vo_current_message_active}|label=ËæìÂÖ•ÂÜÖÂÆπ|multiline=True|lines_shown=2|on_action=action_send_message|on_change=message_changed|class_name=fullwidth message_input|>
 
-<|{vo_icon_history}|button|hover_text=∏¥÷∆¡ƒÃÏº«¬º|on_action=action_copy_conversation|>
+<|{vo_icon_history}|button|hover_text=Â§çÂà∂ËÅäÂ§©ËÆ∞ÂΩï|on_action=action_copy_conversation|>
 |>
 |>
 |>
@@ -30,25 +30,25 @@
 <|{vo_detail_show}|pane|anchor=right|width=800px|
 <|container container-bg|
 
-#### ** Ù–‘±‡º≠**{: .color-primary .h5}
+#### **Â±ûÊÄßÁºñËæë**{: .color-primary .h5}
 
 <|1 1|layout|gap=1rem|class_name=m-half|
-<|{vo_bvt.tname}|input|label=√˚≥∆|class_name=fullwidth|>
+<|{vo_bvt.tname}|input|label=ÂêçÁß∞|class_name=fullwidth|>
 
-<|{vo_bvt.notes}|input|label=√Ë ˆ||class_name=fullwidth|>
+<|{vo_bvt.notes}|input|label=ÊèèËø∞||class_name=fullwidth|>
 |>
 
-#### **≈‰÷√±‡º≠**{: .color-primary .h5}
+#### **ÈÖçÁΩÆÁºñËæë**{: .color-primary .h5}
 
 <|1|layout|class_name=m-half|
 <|{vo_bvt.config.assistant_id}|input|label=AssistantID|active=False|class_name=fullwidth|>
 |>
 
 <|1|layout|class_name=m-half|
-<|{vo_instructions}|input|label=Àµ√˜|multiline=True|lines_shown=10|class_name=fullwidth|>
+<|{vo_instructions}|input|label=ËØ¥Êòé|multiline=True|lines_shown=10|class_name=fullwidth|>
 |>
 
-<|±£¥Ê|button|on_action=action_update|class_name=plain|>
-<|÷ÿ–¬¡∑œ∞|button|on_action=action_open_confirm_dialog|>
+<|‰øùÂ≠ò|button|on_action=action_update|class_name=plain|>
+<|ÈáçÊñ∞ÁªÉ‰π†|button|on_action=action_open_confirm_dialog|>
 |>
 |>

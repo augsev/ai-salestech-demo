@@ -1,14 +1,13 @@
-<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
 <|toggle|theme|>
 
 <|navbar|lov={nav_lov}|>
 
-<|{login_open}|dialog|title=登录|width=30%|
+<|{login_open}|dialog|title=鐧诲綍|width=30%|
 
-<|{username}|input|label=用户名|class_name=fullwidth|>
+<|{username}|input|label=鐢ㄦ埛鍚峾class_name=fullwidth|>
 
-<|{password}|input|password|label=密码|class_name=fullwidth|>
+<|{password}|input|password|label=瀵嗙爜|class_name=fullwidth|>
 
 <br/>
-<|登录|button|class_name=fullwidth plain|on_action=login|>
+<|鐧诲綍|button|class_name=fullwidth plain|on_action=login|>
 |>
