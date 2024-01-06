@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
 <|toggle|theme|>
 
 <|navbar|lov={nav_lov}|>
