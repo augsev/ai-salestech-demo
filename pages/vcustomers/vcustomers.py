@@ -127,6 +127,7 @@ vo_instructions = ''
 
 
 def action_select(state, var_name, value):
+    # keep last message in input.
     if state.last_bvc is not None:
         old_bvc: BoVCustomer = state.last_bvc
         assistant_id = old_bvc.config.assistant_id
@@ -153,10 +154,11 @@ def action_select(state, var_name, value):
 
     state.last_bvc = state.vo_bvc
     state.vo_bvc = new_bvc
-    state.vo_detail_show = True
 
     # initial environment for chat
     switch_chat_context(state)
+
+    state.vo_detail_show = True
     pass
 
 
