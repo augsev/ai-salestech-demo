@@ -14,4 +14,4 @@ pages = {
 
 Core().run()
 gui = Gui(pages=pages)
-gui.run(title="AI销售培训")
+gui.run(title="AI销售培训", change_delay=800)
