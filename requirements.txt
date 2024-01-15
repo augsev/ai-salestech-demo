@@ -3,4 +3,4 @@ mysql-connector-python==8.2.0
 SQLAlchemy==2.0.25
 pydantic==2.5.3
 bcrypt==4.1.2
-openai==1.7.0
+openai==1.7.1

@@ -65,7 +65,7 @@ def create_or_update_cached_assistant(name: str, instructions: str = '', assista
         name="AIC-%s" % name,
         instructions=instructions,
         tools=[],
-        model="gpt-3.5-turbo"
+        model="gpt-3.5-turbo-1106"
     ) if (assistant_id is None or assistant_id == '') else client.beta.assistants.update(
         assistant_id=assistant_id,
         name="AIC-%s" % name,
