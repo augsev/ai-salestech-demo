@@ -12,7 +12,12 @@
 <|2 9|layout|
 <sidebar|sidebar|
 <|{vo_bvc}|selector|lov={vo_bvcs}|type=BoVCustomer|adapter={lambda v: (str(v.id), v.cname)}|on_change=action_select|>
+
+<|1 1|layout|gap=1rem|class_name=m-half|
 <|新建 +|button|on_action=action_open_create_dialog|class_name=fullwidth plain|>
+
+<|刷新|button|on_action=action_reload_selection|class_name=fullwidth|>
+|>
 |sidebar>
 
 <|part|render=True|class_name=align-item-bottom table|

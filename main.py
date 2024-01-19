@@ -1,11 +1,13 @@
 from taipy import Core, Gui
 
+from pages.playground.playground import playground_md
 from pages.root import root_md
 from pages.vcustomers.vcustomers import vcustomers_md
 from pages.vtrainers.vtrainers import vtrainers_md
 
 pages = {
     "/": root_md,
+    "playground": playground_md,
     "vcustomers": vcustomers_md,
     "vtrainers": vtrainers_md,
     # "scenes": scenes_md,
@@ -14,4 +16,4 @@ pages = {
 
 Core().run()
 gui = Gui(pages=pages)
-gui.run(title="AI销售培训", change_delay=800)
+gui.run(title="AI销售培训")

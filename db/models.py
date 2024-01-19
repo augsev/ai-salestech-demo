@@ -120,3 +120,23 @@ class SceneVTrainer(Base):
 
     sid = Column(Integer, ForeignKey('scene.id'), primary_key=True)
     vtid = Column(Integer, ForeignKey('vtrainer.id'), primary_key=True)
+
+
+class Bot(Base):
+    __tablename__ = 'bot'
+
+    id = Column(Integer, primary_key=True, autoincrement=True, comment='机器人ID')
+    name = Column(String(255), nullable=False, comment='名称')
+    prompts = Column(Text, nullable=False, comment='提示词')
+    notes = Column(String(255), default=None, comment='描述，JSON文件，包含了用于生成提示词的详细描述')
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "id": self.id,
+            "name": self.name,
+            "notes": self.notes,
+            "prompts": self.prompts
+        }
+
+    def __repr__(self):
+        return f"<Bot(id={self.id}, name='{self.name}', prompts='{self.prompts}', notes='{self.notes}')>"

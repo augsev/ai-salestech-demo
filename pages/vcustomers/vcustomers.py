@@ -120,6 +120,12 @@ def action_create(state, id, payload):
     pass
 
 
+def action_reload_selection(state):
+    reload(state)
+    state.vo_current_message_active = False
+    pass
+
+
 # for vcustomer details pane
 vo_detail_show = False
 vo_instructions = ''

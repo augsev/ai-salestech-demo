@@ -1,8 +1,8 @@
-<|{vo_create_show}|dialog|title=新建AI培训师|width=30%|labels=取消;新建|on_action=action_create
+<|{vo_create_show}|dialog|title=新建机器人|width=30%|labels=取消;新建|on_action=action_create
 
-<|{vo_tname}|input|label=名称|class_name=fullwidth|>
+<|{vo_name}|input|label=名称|class_name=fullwidth|>
 
-<|{vo_notes}|input|label=描述|class_name=fullwidth|>
+<|{vo_notes}|input|label=备注|class_name=fullwidth|>
 |>
 
 <|{vo_confirm_show}|dialog|title=确认重新练习|width=30%|labels=取消;确认|on_action=action_renew_chat
@@ -11,7 +11,7 @@
 
 <|2 9|layout|
 <sidebar|sidebar|
-<|{vo_bvt}|selector|lov={vo_bvts}|type=BoVTrainer|adapter={lambda v: (str(v.id), v.tname)}|on_change=action_select|>
+<|{vo_bot}|selector|lov={vo_bots}|type=Bot|adapter={lambda v: (str(v.id), v.name)}|on_change=action_select|>
 
 <|1 1|layout|gap=1rem|class_name=m-half|
 <|新建 +|button|on_action=action_open_create_dialog|class_name=fullwidth plain|>
@@ -41,19 +41,14 @@
 #### **属性编辑**{: .color-primary .h5}
 
 <|1 1|layout|gap=1rem|class_name=m-half|
-<|{vo_bvt.tname}|input|label=名称|class_name=fullwidth|>
+<|{vo_bot.name}|input|label=名称|class_name=fullwidth|>
 
-<|{vo_bvt.notes}|input|label=描述||class_name=fullwidth|>
+<|{vo_bot.notes}|input|label=备注||class_name=fullwidth|>
 |>
 
 #### **配置编辑**{: .color-primary .h5}
-
 <|1|layout|class_name=m-half|
-<|{vo_bvt.config.assistant_id}|input|label=AssistantID|active=False|class_name=fullwidth|>
-|>
-
-<|1|layout|class_name=m-half|
-<|{vo_instructions}|input|label=说明|multiline=True|lines_shown=10|class_name=fullwidth|>
+<|{vo_bot.prompts}|input|label=提示词|multiline=True|lines_shown=10|class_name=fullwidth|>
 |>
 
 <|保存|button|on_action=action_update|class_name=plain|>

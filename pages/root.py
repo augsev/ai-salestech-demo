@@ -17,6 +17,7 @@ def login(state):
 
 
 nav_lov = [
+    ("/playground", "机器人"),
     ("/vcustomers", "AI客户"),
     ("/vtrainers", "AI培训师"),
     # ("/scenes", "场景"),
